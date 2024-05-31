@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>Linkedlist.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Linkedlist.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">linkedlist</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Linkedlist </span><span class="s2">{</span>
+    <span class="s1">Node head</span><span class="s2">;</span>
+
+    <span class="s0">public static class </span><span class="s1">Node </span><span class="s2">{</span>
+        <span class="s0">int </span><span class="s1">data</span><span class="s2">;</span>
+        <span class="s1">Node next</span><span class="s2">;</span>
+
+        <span class="s0">public </span><span class="s1">Node </span><span class="s2">(</span><span class="s0">int </span><span class="s1">data</span><span class="s2">){</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">data</span><span class="s2">= </span><span class="s1">data</span><span class="s2">;</span>
+            <span class="s1">next</span><span class="s2">=</span><span class="s0">null</span><span class="s2">;</span>
+
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Linkedlist</span><span class="s2">(){</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">head </span><span class="s2">= </span><span class="s0">null</span><span class="s2">;</span>
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">insert</span><span class="s2">(</span><span class="s0">int </span><span class="s1">value</span><span class="s2">) {</span>
+        <span class="s1">Node newNode </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Node</span><span class="s2">(</span><span class="s1">value</span><span class="s2">);</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">head </span><span class="s2">== </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">head </span><span class="s2">= </span><span class="s1">newNode</span><span class="s2">;</span>
+            <span class="s0">return</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">Node current </span><span class="s2">= </span><span class="s1">head</span><span class="s2">;</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">current</span><span class="s2">.</span><span class="s1">next </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">current </span><span class="s2">= </span><span class="s1">current</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">current</span><span class="s2">.</span><span class="s1">next </span><span class="s2">= </span><span class="s1">newNode</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+
+    <span class="s0">public int </span><span class="s1">size</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">head </span><span class="s2">== </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s0">return </span><span class="s3">0</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s0">int </span><span class="s1">count </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+        <span class="s1">Node current </span><span class="s2">= </span><span class="s1">head</span><span class="s2">;</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">current </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">current </span><span class="s2">= </span><span class="s1">current</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+            <span class="s1">count</span><span class="s2">++;</span>
+        <span class="s2">}</span>
+        <span class="s0">return </span><span class="s1">count</span><span class="s2">;</span>
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">length</span><span class="s2">(){</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;The size is: &quot; </span><span class="s2">+ </span><span class="s1">size</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+
+    <span class="s0">public void </span><span class="s1">display</span><span class="s2">() {</span>
+        <span class="s1">Node current </span><span class="s2">= </span><span class="s1">head</span><span class="s2">;</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">current </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s1">current</span><span class="s2">.</span><span class="s1">data </span><span class="s2">+ </span><span class="s4">&quot;---&gt; &quot;</span><span class="s2">);</span>
+            <span class="s1">current </span><span class="s2">= </span><span class="s1">current</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;null&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">insertAtPos</span><span class="s2">(</span><span class="s0">int </span><span class="s1">position</span><span class="s2">, </span><span class="s0">int </span><span class="s1">value</span><span class="s2">) {</span>
+
+        <span class="s1">Node node </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Node</span><span class="s2">(</span><span class="s1">value</span><span class="s2">);</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">position </span><span class="s2">== </span><span class="s3">1</span><span class="s2">) {</span>
+            <span class="s1">node</span><span class="s2">.</span><span class="s1">next </span><span class="s2">= </span><span class="s1">head</span><span class="s2">;</span>
+            <span class="s1">head </span><span class="s2">= </span><span class="s1">node</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">Node previous </span><span class="s2">= </span><span class="s1">head</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">count </span><span class="s2">= </span><span class="s3">1</span><span class="s2">;</span>
+
+            <span class="s0">while </span><span class="s2">(</span><span class="s1">count </span><span class="s2">&lt; </span><span class="s1">position </span><span class="s2">- </span><span class="s3">1</span><span class="s2">) {</span>
+                <span class="s1">previous </span><span class="s2">= </span><span class="s1">previous</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+                <span class="s1">count</span><span class="s2">++;</span>
+            <span class="s2">}</span>
+
+            <span class="s1">Node current </span><span class="s2">= </span><span class="s1">previous</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+            <span class="s1">previous</span><span class="s2">.</span><span class="s1">next </span><span class="s2">= </span><span class="s1">node</span><span class="s2">;</span>
+            <span class="s1">node</span><span class="s2">.</span><span class="s1">next </span><span class="s2">= </span><span class="s1">current</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+
+
+    <span class="s0">public void </span><span class="s1">deleteAtPosition</span><span class="s2">(</span><span class="s0">int </span><span class="s1">position</span><span class="s2">) {</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">position </span><span class="s2">== </span><span class="s3">1</span><span class="s2">) {</span>
+            <span class="s1">head </span><span class="s2">= </span><span class="s1">head</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">Node previous </span><span class="s2">= </span><span class="s1">head</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">count </span><span class="s2">= </span><span class="s3">1</span><span class="s2">;</span>
+            <span class="s0">while </span><span class="s2">(</span><span class="s1">count </span><span class="s2">&lt; </span><span class="s1">position </span><span class="s2">- </span><span class="s3">1</span><span class="s2">) {</span>
+                <span class="s1">previous </span><span class="s2">= </span><span class="s1">previous</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+                <span class="s1">count</span><span class="s2">++;</span>
+            <span class="s2">}</span>
+
+            <span class="s1">Node current </span><span class="s2">= </span><span class="s1">previous</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+            <span class="s1">previous</span><span class="s2">.</span><span class="s1">next </span><span class="s2">= </span><span class="s1">current</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+
+    <span class="s0">public int </span><span class="s1">searchNode</span><span class="s2">( </span><span class="s0">int </span><span class="s1">value </span><span class="s2">) {</span>
+
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">head </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">){</span>
+            <span class="s1">Node temp </span><span class="s2">= </span><span class="s1">head</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">count</span><span class="s2">= </span><span class="s1">size</span><span class="s2">() + </span><span class="s3">1</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">position</span><span class="s2">;</span>
+            <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s3">1</span><span class="s2">; </span><span class="s1">i</span><span class="s2">&lt; </span><span class="s1">count</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+                <span class="s0">if</span><span class="s2">(</span><span class="s1">temp</span><span class="s2">.</span><span class="s1">data </span><span class="s2">== </span><span class="s1">value</span><span class="s2">){</span>
+                    <span class="s1">position </span><span class="s2">= </span><span class="s1">i</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;is found at node &quot; </span><span class="s2">+ </span><span class="s1">position</span><span class="s2">);</span>
+                    <span class="s0">return </span><span class="s1">position</span><span class="s2">;</span>
+                <span class="s2">}</span>
+                <span class="s1">temp </span><span class="s2">= </span><span class="s1">temp</span><span class="s2">.</span><span class="s1">next</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Node not found! &quot;</span><span class="s2">);</span>
+        <span class="s0">return </span><span class="s3">0</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">deleteAfterNode</span><span class="s2">(</span><span class="s0">int </span><span class="s1">value</span><span class="s2">) {</span>
+        <span class="s1">deleteAtPosition</span><span class="s2">(</span><span class="s1">searchNode</span><span class="s2">(</span><span class="s1">value</span><span class="s2">) + </span><span class="s3">1</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
